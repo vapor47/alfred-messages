@@ -38,10 +38,11 @@ for file in ['run', 'text-view', 'uninstall.sh']:
 binary = 'Messages Helper.app/Contents/MacOS/MessagesHelper'
 with zipfile.ZipFile(root / 'dist/Alfred-Messages.alfredworkflow') as archive:
     assert archive.read(binary) == (wf / binary).read_bytes()
-    for name in ['info.plist','README.md','docs/VALIDATION.md','docs/fixture-results.json','docs/FUTURE_WORK.md']:
+    for name in ['info.plist','README.md','docs/VALIDATION.md','docs/FUTURE_WORK.md','docs/CONTACT_NAME_AUDIT.md']:
         assert archive.read(name) == (wf / name).read_bytes()
     assert 'install.sh' not in archive.namelist()
     assert 'more.png' in archive.namelist()
+    assert not any(name.startswith('docs/') and name not in ['docs/', 'docs/VALIDATION.md', 'docs/FUTURE_WORK.md', 'docs/CONTACT_NAME_AUDIT.md'] for name in archive.namelist())
     for file in ['run','text-view','uninstall.sh',binary]:
         assert archive.getinfo(file).external_attr >> 16 & 0o111
 subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(wf / 'Messages Helper.app')],check=True)

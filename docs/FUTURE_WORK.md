@@ -30,7 +30,7 @@ Custom window and sequential history/reply views are retained only as diagnostic
 
 ## References
 
-[Official ChatGPT findings](ALFRED_CHATGPT_UI_FINDINGS.md), [implementation status](IMPLEMENTATION_STATUS.md), [native validation](VALIDATION.md).
+[Native validation](VALIDATION.md). Research notes on the official ChatGPT workflow are in the source repository at `docs/ALFRED_CHATGPT_UI_FINDINGS.md`.
 
 ## Compose outside recent conversations
 
@@ -61,7 +61,7 @@ The synthetic prepared helper decouples history preparation from Text View execu
 
 ## Accessibility experiments implemented (synthetic probe v0.8)
 
-Separate `msg-ui-ax` experiments now attempt draft/range restoration, a 500 ms typing-pause gate, approximate conditional scroll restoration via writable scrollbar fraction, and opt-in bounded memory-only keystroke capture/replay. Exact synthetic-session identity and frontmost Alfred are checked; ambiguous/missing controls and newer nonempty drafts cause restoration to abort. Active IME composition, held/modifier keys and exact message-anchor preservation remain unsupported. Buffer failure can discard synthetic queued characters, so this is not production functionality. Numeric AX outcomes and observed disabled intervals are recorded separately from fetch latency; no text or raw events are persisted. Prepared fetch now avoids a child-process launch and labels new inline IPC measurements separately from legacy timings. Native authorization, field/scroll exposure and successful replay require live Alfred checks; automated tests do not establish those capabilities. The workspace executable currently reports Accessibility trust false in the agent environment.
+Historical: the separate `msg-ui-ax` experiments (since retired and removed) attempted draft/range restoration, a 500 ms typing-pause gate, approximate conditional scroll restoration via writable scrollbar fraction, and opt-in bounded memory-only keystroke capture/replay. Exact synthetic-session identity and frontmost Alfred are checked; ambiguous/missing controls and newer nonempty drafts cause restoration to abort. Active IME composition, held/modifier keys and exact message-anchor preservation remain unsupported. Buffer failure can discard synthetic queued characters, so this is not production functionality. Numeric AX outcomes and observed disabled intervals are recorded separately from fetch latency; no text or raw events are persisted. Prepared fetch now avoids a child-process launch and labels new inline IPC measurements separately from legacy timings. Native authorization, field/scroll exposure and successful replay require live Alfred checks; automated tests do not establish those capabilities. The workspace executable currently reports Accessibility trust false in the agent environment.
 
 ## Latest native v0.8.2 experiment results
 

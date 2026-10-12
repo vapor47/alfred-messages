@@ -10,11 +10,10 @@ mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources" dist
 cp .build/release/MessagesHelper "$app/Contents/MacOS/MessagesHelper"
 /usr/bin/python3 scripts/package.py
 codesign --force --sign - --identifier dev.local.alfred-messages.helper "$app"
-rm -f workflow/install.sh
 cp scripts/uninstall.sh workflow/uninstall.sh
 cp README.md workflow/README.md
-mkdir -p workflow/docs
-cp docs/VALIDATION.md docs/fixture-results.json docs/FUTURE_WORK.md docs/IMPLEMENTATION_STATUS.md docs/ALFRED_CHATGPT_UI_FINDINGS.md docs/CONTACT_NAME_AUDIT.md workflow/docs/
+rm -rf workflow/docs; mkdir -p workflow/docs
+cp docs/VALIDATION.md docs/FUTURE_WORK.md docs/CONTACT_NAME_AUDIT.md workflow/docs/
 chmod +x workflow/run workflow/text-view workflow/uninstall.sh
 rm -f dist/Alfred-Messages.alfredworkflow
 (cd workflow && /usr/bin/zip -qry ../dist/Alfred-Messages.alfredworkflow . -x '*.DS_Store')

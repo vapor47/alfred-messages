@@ -14,14 +14,10 @@ if operation == "live-self-test" {
 } else if operation == "watch-view" {
     let settings = Settings(mode: CacheMode(rawValue: env["cache_mode"] ?? "disk") ?? .off, conversations: Int(env["conversation_limit"] ?? "8") ?? 8, messages: Int(env["message_limit"] ?? "10") ?? 10, sendKey: env["send_key"] ?? "return")
     liveDriver(args.dropFirst().first ?? "", chat: args.dropFirst(2).first ?? "", settings: settings)
-} else if operation == "accessibility" || (operation == "admin" && args.dropFirst().first == "accessibility") {
+} else if operation == "accessibility" {
     let trusted = AXIsProcessTrustedWithOptions([kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
     let message = trusted ? "Automatic updates have Accessibility access. Reopen the conversation to start." : "Allow Messages Helper in System Settings → Privacy & Security → Accessibility, then reopen the conversation."
-    if operation == "admin" { print(message) } else { emit(["trusted": trusted, "executable": CommandLine.arguments[0], "status": message]) }
-} else if operation == "tools" {
-    let tools = [("clear", "Clear cache", "Delete retained transcripts, names and avatars"), ("refresh", "Refresh", "Reconcile cached data"), ("diagnostics", "Cache status", "Counts, mode and permissions; no message content"), ("configure", "Apply settings", "Apply mode, send key and limits now"), ("benchmark", "Benchmark all modes", "Compare reader/render latency while respecting active persistence policy"), ("accessibility", "Automatic refresh access", "Enable Messages Helper Accessibility access for in-place updates")]
-    let query = args.dropFirst().first?.lowercased() ?? ""
-    emit(["items": tools.filter { query.isEmpty || $0.1.lowercased().contains(query) }.map { ["title": $0.1, "subtitle": $0.2, "arg": $0.0, "valid": true] as [String: Any] }])
+    emit(["trusted": trusted, "executable": CommandLine.arguments[0], "status": message])
 } else if operation == "daemon" {
     do { let service = try Service(root: root, database: database); try Transport.serve(service.handle) }
     catch { FileHandle.standardError.write(Data(("Helper startup failed: " + String(describing: error) + "\n").utf8)); exit(1) } // Startup errors contain no message/contact content.
@@ -30,7 +26,7 @@ if operation == "live-self-test" {
     catch { emit(["error": String(describing: error)]) }
 } else {
     let settings = Settings(mode: CacheMode(rawValue: env["cache_mode"] ?? "disk") ?? .off, conversations: Int(env["conversation_limit"] ?? "8") ?? 8, messages: Int(env["message_limit"] ?? "10") ?? 10, sendKey: env["send_key"] ?? "return")
-    var actualOperation = operation == "admin" ? (args.dropFirst().first ?? "diagnostics") : operation
+    var actualOperation = operation
     let argument = args.dropFirst().first ?? ""
     let automatic = LiveInput.containsRefresh(argument)
     if !automatic && actualOperation == "view" && env["view_action"] == "history" { LiveDispatchGuard.clearInactive() }
@@ -65,9 +61,7 @@ if operation == "live-self-test" {
                 }
             }
         }
-        if operation == "admin" {
-            if let object = try? JSONSerialization.jsonObject(with: data), let pretty = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted, .sortedKeys]), let text = String(data: pretty, encoding: .utf8) { print("# Messages cache\n\n```json\n" + text + "\n```") }
-        } else { FileHandle.standardOutput.write(data); FileHandle.standardOutput.write(Data([10])) }
+        FileHandle.standardOutput.write(data); FileHandle.standardOutput.write(Data([10]))
         if automatic {
             _ = try? Transport.call(Request(operation: "auto-finish", settings: settings, chat: request.chat, action: "accept", viewSession: request.viewSession, refreshToken: request.refreshToken), seconds: 2)
         }
