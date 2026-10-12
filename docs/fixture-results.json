@@ -1,0 +1,91 @@
+{
+  "fixture": "35 conversations \u00d7 40 messages; 30/30 limits; synthetic content only",
+  "output_timings": {
+    "disk": {
+      "configure_to_first_ready_ms": 289.24,
+      "list_warm_p50_ms": 9.62,
+      "list_warm_p95_ms": 13.68,
+      "samples": 50
+    },
+    "memory": {
+      "configure_to_first_ready_ms": 17.5,
+      "list_warm_p50_ms": 7.74,
+      "list_warm_p95_ms": 14.28,
+      "samples": 50
+    },
+    "off": {
+      "configure_to_first_ready_ms": 21.1,
+      "list_warm_p50_ms": 13.82,
+      "list_warm_p95_ms": 31.72,
+      "samples": 50
+    }
+  },
+  "checks": [
+    "disk preserves exact selected group ID and activity order",
+    "disk avatar policy",
+    "disk renders chronological history",
+    "disk plain Return cannot submit in Command-Return mode",
+    "disk initial history never submits its input",
+    "memory preserves exact selected group ID and activity order",
+    "memory avatar policy",
+    "memory has no disk message/contact cache",
+    "memory persists only non-content settings",
+    "memory renders chronological history",
+    "memory plain Return cannot submit in Command-Return mode",
+    "memory initial history never submits its input",
+    "off preserves exact selected group ID and activity order",
+    "off avatar policy",
+    "off has no disk message/contact cache",
+    "off persists only non-content settings",
+    "off renders chronological history",
+    "off plain Return cannot submit in Command-Return mode",
+    "off initial history never submits its input",
+    "off stops watcher and retains no snapshot",
+    "off benchmark respects persistence policy",
+    "WAL watcher publishes within two seconds on synthetic fixture",
+    "Return submission database failure preserves draft and cached history without running automation",
+    "explicit refresh retains draft and preserves submission token",
+    "limit reductions apply immediately",
+    "message reductions apply immediately",
+    "memory restart rebuilds without persistent content",
+    "off restart creates no watchers",
+    "off restart creates no persistent content"
+  ],
+  "reader_render_benchmark": [
+    {
+      "cold_ms": 332.37695693969727,
+      "conversation_limit": 30,
+      "disk_io": false,
+      "iterations": 20,
+      "message_limit": 30,
+      "mode": "disk",
+      "note": "Disk persistence simulated in memory to respect active policy",
+      "warm_p50_ms": 304.4400215148926,
+      "warm_p95_ms": 497.18403816223145
+    },
+    {
+      "cold_ms": 298.04694652557373,
+      "conversation_limit": 30,
+      "disk_io": false,
+      "iterations": 20,
+      "message_limit": 30,
+      "mode": "memory",
+      "note": "Helper reader/render timings; IPC and Alfred excluded",
+      "warm_p50_ms": 288.7129783630371,
+      "warm_p95_ms": 303.1049966812134
+    },
+    {
+      "cold_ms": 290.92395305633545,
+      "conversation_limit": 30,
+      "disk_io": false,
+      "iterations": 20,
+      "message_limit": 30,
+      "mode": "off",
+      "note": "Helper reader/render timings; IPC and Alfred excluded",
+      "warm_p50_ms": 293.9540147781372,
+      "warm_p95_ms": 310.48595905303955
+    }
+  ],
+  "fixture_wal_freshness_ms": 282.78,
+  "checks_passed": 29
+}

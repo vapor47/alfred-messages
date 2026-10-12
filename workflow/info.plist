@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dev.local.alfred-messages</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>45C8DB47-DB73-5AB1-BE51-AD5715B9F671</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5494E310-248E-57DB-BB24-13D62CEC41CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>92EDDABB-DFBB-5C5F-B1C5-BD2135B6986A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B2F0616B-37C6-53B1-A4A1-178AF7501ECA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BE629B82-A2E9-5C85-BFFE-941D0EE36B41</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5494E310-248E-57DB-BB24-13D62CEC41CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>649F841F-178B-4A22-A5D9-DF731D512119</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B239FEA1-6AB5-5B61-AD9E-804070B30EE9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>92EDDABB-DFBB-5C5F-B1C5-BD2135B6986A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Send reply</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BE629B82-A2E9-5C85-BFFE-941D0EE36B41</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Refresh only with empty reply field</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2F0616B-37C6-53B1-A4A1-178AF7501ECA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open Messages; retain/select draft</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Joseph</string>
+	<key>description</key>
+	<string>Recent Messages and contextual replies with optional caching</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Messages</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Reading recent conversations…</string>
+				<key>script</key>
+				<string>./run list "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>subtext</key>
+				<string>Browse and reply to recent conversations</string>
+				<key>title</key>
+				<string>Recent Messages</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>45C8DB47-DB73-5AB1-BE51-AD5715B9F671</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>Reply below · ⌥↩ Open Messages</string>
+				<key>inputfile</key>
+				<string>text-view</string>
+				<key>inputtype</key>
+				<integer>1</integer>
+				<key>loadingtext</key>
+				<string>Loading conversation…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>view_action</key>
+					<string>command-send</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>92EDDABB-DFBB-5C5F-B1C5-BD2135B6986A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>view_action</key>
+					<string>refresh</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5494E310-248E-57DB-BB24-13D62CEC41CE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>view_action</key>
+					<string>open</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>B2F0616B-37C6-53B1-A4A1-178AF7501ECA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Empty draft</string>
+						<key>uid</key>
+						<string>649F841F-178B-4A22-A5D9-DF731D512119</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Draft present</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>BE629B82-A2E9-5C85-BFFE-941D0EE36B41</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Refresh paused while a draft is present. Send or clear the draft first.</string>
+				<key>title</key>
+				<string>Messages</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B239FEA1-6AB5-5B61-AD9E-804070B30EE9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Messages for Alfred
+
+Browse recent conversations, read history in Alfred's Markdown Text View, and submit replies to the exact selected Messages chat. Built for this Mac: macOS 26.3, Alfred 5.8.1 with Powerpack, Apple Silicon. No third-party runtime is needed. The importable build is `dist/Alfred-Messages.alfredworkflow`.
+
+The conversation UI uses Markdown history above a native reply field in one Alfred Text View. Since version 0.7, the workflow integrates the in-place refresh approach developed in the UI experiments: the helper prepares fresh exact-chat history, and an active-view driver checks for changes every 500 ms. During a short update it buffers typing in memory and restores the draft and selection. The existing conversation heading carries session identity in its link destination; no identifier label is displayed. It does not use a continuous Alfred rerun chain. Production native behavior still needs verification; see [docs/VALIDATION.md](docs/VALIDATION.md).
+
+## Setup
+
+1. Import the `.alfredworkflow` and run `msg`. The helper is bundled and starts on demand; no Terminal installation or LaunchAgent registration is required.
+2. Reading the protected Messages database requires Full Disk Access. Start by granting Alfred this permission, as with Mouseless Messenger. Whether that covers the Alfred-launched Swift helper on this Mac remains to validate. If database access is denied, the helper's diagnostic will say so; the bundled helper app may need its own grant. Caching itself does not require Full Disk Access.
+3. Messages Automation permission is needed for participant names and replying. Names come from Messages; no separate Contacts permission is required. Valid names survive raw or partial cache refreshes and sends. Missing names are looked up for the selected chat; active views retry unresolved names in background at most once every 30 seconds, without adding lookup to the send response. Background cache refreshes look up only conversations still missing names, and only while Messages is running, so they do not launch it. A conversation whose lookup returns no name at all (for example an unsaved number) is not looked up again for 60 seconds; that skip state (a hashed chat ID and time) stays in helper memory only and is never written to disk, in every cache mode including off. Already resolved names are rechecked by a full background lookup about every 15 minutes, so renamed contacts update. While Messages is not running, new conversations in the list show handles until opened. Denied/unavailable automation falls back to phone numbers/email addresses without preventing database history reads. These macOS grants are separate from importing the workflow.
+4. For automatic history updates, grant the bundled **Messages Helper** Accessibility access in System Settings. Reopen the conversation afterward. The production helper has a separate identity from the experimental helper; its permission may need granting again after reinstalling an ad-hoc signed build.
+
+The helper remains alive to retain memory-only cache and watch database events until it exits or the Mac restarts; the next invocation starts it again. No login agent is installed. The app bundle stays inside the imported workflow rather than being copied elsewhere. Old manually installed helper/LaunchAgent files are not automatically deleted: use the old uninstall script if desired, then invoke the new workflow. Its versioned endpoint avoids connecting to the old helper. Helper-restart and version-update behavior still need live testing.
+
+## Use
+
+Type `msg` to list 8 recent conversations by activity, followed by a More conversations row that shows the next 8 older chats (the search field shows a page marker such as `msg »2`; reopening `msg` returns to the most recent). Filter by conversation name or participant; results rank by name match, then recency. Return performs a fresh coherent read of the exact selected chat, even outside the recent list, and opens 10 messages in chronological order, scrolled to the newest. Reactions appear as sender/timestamp events with the target text when available; attachments appear as labels. Reading history only uses read-only SQLite queries and does not mark messages read.
+
+Write a reply in the separate Text View input field. Return submits by default. Set `send_key` to `command-return` to require Command-Return; plain Return then preserves the draft. A successful submission immediately appears in history as **Submitted to Messages**, even before Messages saves its database row, and clears the input. The temporary entry reconciles with the saved message without duplication. Sending returns immediately without waiting for delivery. Active-view background refresh reconciles committed messages and updates available delivery flags; explicit refresh also checks them. Submission, sent and delivered are distinct states; errors select and retain the draft. The history remains in Text View.
+
+Control-Return performs a fresh exact-chat read only when the reply field is empty. With a nonempty draft, refresh is blocked and the current view is retained; a notification explains why. It does not reset the submission token or authorize retry of an ambiguous attempt. Option-Return activates Messages and retains/selects the draft. Messages' public scripting dictionary has no command to select a chat in its UI, so this action activates the app after resolving the exact chat; select the conversation in Messages yourself. It does not mark messages read on the workflow's behalf.
+
+Cache mode and limits are configured in Alfred’s workflow settings and apply on the next invocation. Limits are clamped to 1–200. There is no automatic retry after an ambiguous failure. Rapid duplicate submissions are blocked by a per-view token and a pending-chat guard. Tokens are held in helper memory for up to 24 hours; restarting the helper clears them, so check Messages before manually retrying after a restart.
+
+## Cache settings and privacy
+
+| `cache_mode` | Data retained | Background behavior |
+| --- | --- | --- |
+| `disk` (default) | Bounded summaries, transcripts, resolved contact names and generated initials avatars (named conversations only; others use the bundled icon) | DB/WAL/directory change events, coalesced reads, 15-second reconciliation |
+| `memory` | Same summaries, transcripts and names in helper memory; bundled icon | Same watcher; rebuild after helper restart/login |
+| `off` | No reusable conversation cache; bundled icon. Active-view frames are temporarily held in memory | No file watcher or cache reconciliation; fresh exact-chat reads while a view is active |
+
+The on-demand helper remains running as a local IPC endpoint in off mode, to coordinate submissions; it has no background Messages watcher or retained snapshot. Each ordinary request reads the database and resolves Messages participant names on demand. In all cache modes, an active conversation additionally prepares fresh exact-chat frames approximately once per second, retaining them only in memory. Active-view state expires six seconds after its last heartbeat. These reads do not resolve names on every update; the view retains its already resolved names. This small long-lived endpoint is an implementation difference from completely stopping the helper in off mode.
+
+Disk cache is confined to `~/Library/Application Support/AlfredMessages/cache`. Switching away from disk removes that directory before acknowledging the mode change, resets memory, and rejects stale in-flight reader results. Mode and limit settings are stored separately in `settings.json`, containing no contact/message data. Cache files are atomically replaced with mode 0600 under mode 0700 directories. The private Unix socket and lock in `/tmp/alfred-messages-v083-&lt;uid&gt;` contain no message data. Helper stdout/stderr are discarded by the helper process; it writes no content logs. Alfred's Script Filter result cache is disabled by omitting its optional `cache` output entirely. Do not enable Alfred's workflow debugger while displaying sensitive conversations: Alfred owns the UI and may record script outputs independently of the helper.
+
+Memory and off modes never write personal avatars, contact names or message content to files, including temporary files. In disk mode avatars use initials from contact names or the group title, not contact photos or phone numbers. Clear cache removes disk and memory snapshots. An active cached-mode watcher may rebuild the cache on the next database event or reconciliation; switch to off to keep it empty. Unsent drafts are held by Alfred while displayed and briefly by the refresh driver during an update. Buffered keystrokes and draft snapshots stay in memory. Private temporary refresh guards contain only opaque session/refresh identifiers and a process ID; lock files contain no content. Updates pause for input methods requiring composition and while modifiers are held. Scroll restoration uses scrollbar position, not an exact message anchor. Refresh faults pause the driver and appear in numeric diagnostics; they are not counted as successful updates. After successful submission, the helper temporarily retains submitted text in memory to bridge database commit delays; it is never written to workflow cache files. These UI receipts expire after 120 seconds without a receipt-status check, checked every second, or are removed by Clear cache. Saved database messages continue to follow the selected cache policy. Off mode does not control macOS swap, Alfred's own memory or system-owned database files. Opening Messages can cause Messages itself to mark its selected chat read.
+
+## Helper operations
+
+The workflow's `run` wrapper invokes the stable app's executable. Operations: `list [filter]`, `view [draft]` (history/send/refresh/open through session variables), `history`, `send [draft]`, `open`, `refresh`, `configure`, `clear`, `diagnostics`, `benchmark`, `permissions`, and `daemon`. Internal active-view operations are `auto-check`, `auto-prepare`, `auto-fetch`, `auto-result`, `auto-finish`, `auto-fault`, and `watch-view`; `accessibility` requests access only when explicitly invoked. Automatic fetches carry a marked nonce and cannot submit a draft. A separate private dispatch guard blocks unmarked sends during an unresolved refresh, including helper-state loss. All IPC requests include settings. `chat_id` carries the database `chat.guid` unchanged; AppleScript resolves exactly one chat with the same identifier and never falls back to a participant. Draft and chat values are Apple event arguments, never source-code interpolation. SQLite opens with `SQLITE_OPEN_READONLY` and `PRAGMA query_only=ON`.
+
+## Build and verify
+
+Requires Apple's Command Line Tools for development only:
+
+```sh
+./scripts/test.sh
+./scripts/build.sh
+```
+
+The build compiles Swift, generates native Alfred metadata and a 256px bundled icon, ad-hoc signs the helper app, and ZIPs the importable workflow. Python is used only at build/test time. Rebuilding/reinstalling an ad-hoc signed app can require re-granting macOS permissions. This is a local build, not a notarized public release.
+
+Tests use a standalone Swift harness (no XCTest or full Xcode required), synthetic SQLite fixtures, the actual request handler, and mock send closures. `python3 scripts/integration.py` additionally exercises separate-process IPC on an unrestricted local Mac; this execution sandbox denied socket binding. See `docs/VALIDATION.md` for results and remaining live checks. The benchmark uses one reader and renderer with the same limits for all modes. If the selected policy is memory or off, the disk comparison simulates persistence in memory and says so; it never creates a disk benchmark cache. Under disk policy the disk benchmark does a real atomic write/reload. Timings exclude Alfred UI and IPC; do not treat them as a measured end-to-end p95. Cached output below 100ms p95 and normal freshness within two seconds are targets, not verified live promises.
+
+## Removal
+
+Delete the workflow in Alfred. The new build creates no LaunchAgent or separately installed app. Clear cache before removal if desired. A running helper can remain alive until logout/restart; lifecycle-aware shutdown is deferred. The retained uninstall script is for cleaning up the legacy manual installation, not required setup for this build.
+
+## References
+
+Native UI behavior follows [Alfred Text View](https://www.alfredapp.com/help/workflows/user-interface/text/) and [Text View JSON](https://www.alfredapp.com/help/workflows/user-interface/text/json/). Cache output follows [Script Filter JSON](https://www.alfredapp.com/help/workflows/inputs/script-filter/json/). Exact-chat automation follows the installed macOS Messages scripting dictionary at `/System/Applications/Messages.app/Contents/Resources/Messages.sdef`.
+</string>
+	<key>uidata</key>
+	<dict>
+		<key>45C8DB47-DB73-5AB1-BE51-AD5715B9F671</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>5494E310-248E-57DB-BB24-13D62CEC41CE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>92EDDABB-DFBB-5C5F-B1C5-BD2135B6986A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>B239FEA1-6AB5-5B61-AD9E-804070B30EE9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>B2F0616B-37C6-53B1-A4A1-178AF7501ECA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>BE629B82-A2E9-5C85-BFFE-941D0EE36B41</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>D75EBBE8-B7CE-57B3-8130-312CC674E8BA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>msg</string>
+				<key>placeholder</key>
+				<string>msg</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Lists recent conversations.</string>
+			<key>label</key>
+			<string>Conversation keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>disk</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Disk — default</string>
+						<string>disk</string>
+					</array>
+					<array>
+						<string>Memory only</string>
+						<string>memory</string>
+					</array>
+					<array>
+						<string>Off</string>
+						<string>off</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>disk, memory, or off. Changes apply on the next invocation; leaving disk deletes cached transcripts and avatars.</string>
+			<key>label</key>
+			<string>Cache mode</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>cache_mode</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>return</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Return</string>
+						<string>return</string>
+					</array>
+					<array>
+						<string>Command-Return</string>
+						<string>command-return</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>return or command-return. In command-return mode, plain Return cannot send.</string>
+			<key>label</key>
+			<string>Send key</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>send_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>8</string>
+				<key>placeholder</key>
+				<string>8</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>1–200, default 8. A More conversations row pages through older chats.</string>
+			<key>label</key>
+			<string>Recent conversations</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>conversation_limit</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>10</string>
+				<key>placeholder</key>
+				<string>10</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>1–200, default 10.</string>
+			<key>label</key>
+			<string>Messages per conversation</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>message_limit</string>
+		</dict>
+	</array>
+	<key>variables</key>
+	<dict>
+		<key>cache_mode</key>
+		<string>disk</string>
+		<key>conversation_limit</key>
+		<string>8</string>
+		<key>keyword</key>
+		<string>msg</string>
+		<key>message_limit</key>
+		<string>10</string>
+		<key>send_key</key>
+		<string>return</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.8.3</string>
+</dict>
+</plist>

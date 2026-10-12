@@ -1,0 +1,17 @@
+.build/
+.DS_Store
+workflow/Messages Helper.app/
+workflow/icon.png
+workflow/docs/
+workflow/README.md
+workflow/install.sh
+workflow/uninstall.sh
+ui-probe/MessagesUIProbe
+ui-probe/icon.png
+
+window-prototype/Messages Window Prototype.app/
+window-prototype/icon.png
+
+# Build outputs
+dist/
+workflow/more.png

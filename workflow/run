@@ -1,0 +1,4 @@
+#!/bin/zsh
+set -euo pipefail
+helper="${0:A:h}/Messages Helper.app/Contents/MacOS/MessagesHelper"
+exec "$helper" "$@"
